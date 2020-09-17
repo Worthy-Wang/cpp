@@ -63,8 +63,73 @@ void test3()
     }
 }
 
+vector<int> maxInWindows(const vector<int> &num, unsigned int size)
+{
+    if (size > num.size())
+        return {};
+    vector<int> ans;
+    std::deque<int> deque;
+    for (int i = 0; i < size; i++)
+    {
+        while (!deque.empty() && num[deque.back()] <= num[i])
+            deque.pop_back();
+        deque.push_back(i);
+    }
+    ans.push_back(num[deque.front()]);
+    for (int i = size; i < num.size(); i++)
+    {
+        while (!deque.empty() && num[deque.back()] <= num[i])
+            deque.pop_back();
+        deque.push_back(i);
+        if (i - deque.front() >= size)
+            deque.pop_front();
+        ans.push_back(num[deque.front()]);
+    }
+    return ans;
+}
+
+class A
+{
+    int _a = 0;
+    mutable int _b = 0;
+
+public:
+    A() {}
+    void change() const
+    {
+        // _a++;
+        _b++;
+    }
+};
+
+const A getA()
+{
+    A a;
+    return a;
+}
+
+//const 修饰普通变量
+void test4()
+{
+    const int a = 7;
+    int *p = (int *)&a;
+    *p = 8;
+    cout << a << endl;
+}
+
+const char* getstr()
+{
+    char *str = "hello";
+    return str;
+}
+
+void funcF(const int& a)
+{
+    cout << a << endl;
+}
+
 int main()
 {
-    test3();
+    funcF(3);
     return 0;
 }
