@@ -17,31 +17,17 @@
 #include <unordered_set>
 using namespace std;
 
-class Foo
-{
-public:
-    static int cnt;
-    Foo()
-    {
-        // cnt++;
-    }
-};
+/*
+begin:
+end:
+Time Complexity:
+Space Complexity:
+Method:
+*/
+extern int a;
 
-
-static int i = 3;
-void func()
-{
-    i++;
-    cout << i << endl;
-}
-
-int func4(int num)
-{
-
-}
-
-int (*p[10])(int);
 int main()
 {
-    return 0;
+   cout << a << endl;
+   return 0;
 }

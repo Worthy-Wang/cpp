@@ -17,31 +17,24 @@
 #include <unordered_set>
 using namespace std;
 
-class Foo
+struct A
 {
-public:
-    static int cnt;
-    Foo()
+    int a;
+    template <typename T>
+    void func(T val)
     {
-        // cnt++;
+        cout << val << endl;
     }
 };
 
-
-static int i = 3;
-void func()
+class B : A
 {
-    i++;
-    cout << i << endl;
-}
+    int b;
+};
 
-int func4(int num)
-{
-
-}
-
-int (*p[10])(int);
 int main()
 {
+    A a;
+    a.func(3);
     return 0;
 }
