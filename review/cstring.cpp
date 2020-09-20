@@ -133,7 +133,7 @@ int myStrlen(const char* s)
 
 void test7()
 {
-    char s[100] = "ab";
+    char s[100] = "a";
     cout << strlen(s) << endl;    
     cout << myStrlen(s) << endl;
 }
