@@ -61,12 +61,7 @@ void Student::operator delete[](void* del){
 
 int main()
 {
-	Student* s = new Student[3]();
-	delete[] s;	
-
-	Student* s2 = new Student();
-	delete s2;
-
+	cout << -3%2 << endl;
 	return 0;
 }
 
