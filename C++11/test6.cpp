@@ -17,17 +17,34 @@
 #include <unordered_set>
 using namespace std;
 
-class A: public enable_shared_from_this<A>
+class A
 {
 public:
-    shared_ptr<A> returnS()
+    A()
     {
-        return shared_from_this();
+        cout << "A()" << endl;
+    }
+    ~A()
+    {
+        cout << "~A()" << endl;
+    }
+};
+
+class B
+{
+public:
+    B()
+    {
+        cout << "B()" << endl;
+    }
+    ~B()
+    {
+        cout << "~B()" << endl;
     }
 };
 
 int main()
 {
-    shared_ptr<int> p1 = std::make_shared<int>(3);
+    B b;
     return 0;
 }

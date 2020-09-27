@@ -13,7 +13,7 @@ public:
     {
         cout << "析构函数" << endl;
     }
-    weak_ptr<B> _pb;
+    weak_ptr<B> _pb;//若为shared_ptr，那么析构时只会析构pA和pB，但A 和 B 的引用计数仍为1，所以不能析构并释放内存
 };
 
 class B
@@ -27,17 +27,10 @@ public:
     {
         cout << "析构函数" << endl;
     }
-
     weak_ptr<A> _pa;
 };
 
-/*
-如果在类A与类B中都设置 shared_ptr型指针的话，会造成死锁的原因：
-test4()函数结束，pA 与 pB销毁，但是A , B 的引用计数仍然为1, 所以A ，B并不会调用析构函数
-*/
-
-//测试weak_ptr
-void test4()
+int main()
 {
     shared_ptr<A> pA(new A());
     shared_ptr<B> pB(new B());
@@ -45,13 +38,6 @@ void test4()
     pB->_pa = pA;
     cout << "A的引用计数：" << pA.use_count() << endl;
     cout << "B的引用计数：" << pB.use_count() << endl;
-}
-
-int main()
-{
-    shared_ptr<int> p1(new int(3));
-    shared_ptr<int> p2 = p1;
-    cout << p1.use_count() << endl;
-    cout << p2.use_count() << endl;
     return 0;
 }
+
