@@ -17,26 +17,20 @@
 #include <unordered_set>
 using namespace std;
 
+
 class A
 {
+    int i;
 public:
-    virtual void func(){}
-};
-
-class B : public A
-{
+    static void print()
+    {
+        cout << "helloWorld" << endl;
+    }
 };
 
 int main()
 {
     A a;
-    B b;
-    try
-    {
-        B& b = dynamic_cast<B&>(a);
-    }catch(bad_cast)
-    {
-        cout << "bad_cast" << endl;
-    }
+    a.print();
     return 0;
 }

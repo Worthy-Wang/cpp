@@ -20,23 +20,34 @@ using namespace std;
 class A
 {
 public:
-    virtual void func(){}
+    int _i;
+    A(int i)
+    :_i(i)
+    {}
 };
 
-class B : public A
+class B:public A
 {
+public:
+    B(int i)
+    :A(i)
+    {}
+};
+
+class C
+{
+    int& _i;
+public:
+    C(int i)
+    :_i(i)
+    {}
 };
 
 int main()
 {
-    A a;
-    B b;
-    try
-    {
-        B& b = dynamic_cast<B&>(a);
-    }catch(bad_cast)
-    {
-        cout << "bad_cast" << endl;
-    }
+    C c(3);
     return 0;
 }
+
+
+
