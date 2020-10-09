@@ -17,6 +17,7 @@
 #include <unordered_set>
 using namespace std;
 
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
 
 int main()
