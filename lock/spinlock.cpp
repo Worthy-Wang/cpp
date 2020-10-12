@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <iostream>
+using namespace std;
 
-#define THREAD_NUM 10
+#define THREAD_NUM 2
 
 pthread_spinlock_t spinlock;
 
@@ -14,7 +16,8 @@ void *thread_proc(void *arg)
     while (i++ < 100000)
     {
         pthread_spin_lock(&spinlock); // 加锁
-        (*pcount)++;
+        cout << pthread_self() << endl;
+        cout << (*pcount)++ <<endl;
         pthread_spin_unlock(&spinlock); // 解锁
         usleep(1);
     }

@@ -8,7 +8,6 @@ void *thread_proc(void *)
 {
     int i = 0;
     for (i = 0; i < 5000; i++)
-
     {
         pthread_mutex_lock(&mutex);
         pthread_mutex_lock(&mutex);
