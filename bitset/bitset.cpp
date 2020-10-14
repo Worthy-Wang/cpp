@@ -1,13 +1,23 @@
 #include <bitset>
 #include <iostream>
 #include <string>
+#include <sstream>
 using namespace std;
+
+string reverseWords(string s)
+{
+    stringstream ss(s);
+    string res, temp;
+    while (ss >> temp)
+        res = " " + temp + res;
+    if (res.empty())
+        return string();
+    return string(res.begin() + 1, res.end());
+}
 
 int main()
 {
-    bitset<4> bits1("0010");
-    bitset<4> bits2("1011");
-    
-    cout << bits2.to_ulong() << endl;
+    string s("Helloworld");
+    cout << s.substr(0,2) << endl;
     return 0;
 }
