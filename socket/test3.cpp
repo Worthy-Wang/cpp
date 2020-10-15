@@ -1,0 +1,28 @@
+#include <iostream>
+#include <algorithm>
+#include <map>
+#include <unordered_map>
+#include <queue>
+#include <set>
+#include <vector>
+#include <fstream>
+#include <sstream>
+#include <string.h>
+#include <memory>
+#include <limits>
+#include <list>
+#include <regex>
+#include <functional>
+#include <math.h>
+#include <unordered_set>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <syslog.h>
+using namespace std;
+
+int main()
+{
+
+    return 0;
+}
