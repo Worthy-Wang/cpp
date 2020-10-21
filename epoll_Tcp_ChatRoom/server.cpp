@@ -14,7 +14,7 @@ int main()
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     ERROR_CHECK(sockfd, -1, "socket");
     int on = 1;
-    ret = setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR | SO_KEEPALIVE, &on, sizeof(on));
+    ret = setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR | SO_KEEPALIVE , &on, sizeof(on));
     ERROR_CHECK(ret, -1, "setsockopt");
     struct sockaddr_in sockinfo;
     bzero(&sockinfo, sizeof(sockinfo));
