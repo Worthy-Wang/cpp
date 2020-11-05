@@ -17,7 +17,7 @@ string reverseWords(string s)
 
 int main()
 {
-    string s("Helloworld");
+    string s("Helloworld123");
     cout << s.substr(0,2) << endl;
     return 0;
 }
